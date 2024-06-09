@@ -1,28 +1,22 @@
 import React from 'react';
 import './App.css'
-import Navbar from '../src/Components/Navbar/Navbar.jsx';
-import Hero from './Components/Hero/Hero.jsx';
-import About from './Components/About/About.jsx';
-import Faqs from './Components/Faqs/Faqs.jsx'
-import Contact from './Components/Contact/Contact.jsx';
-import Footer from './Components/Footer/Footer.jsx'
+import { WorkoutProvider } from './context/WorkoutContext';
+import WorkoutForm from './Components/WorkoutForm';
+import WorkoutList from './Components/WorkoutList';
+import EditWorkoutForm from './Components/EditWorkoutForm';
 
 
 function App() {
-
-
   return (
-    <>
-      <div>
-        <Navbar />
-        <Hero />
-        <About />
-        <Faqs />
-        <Contact />
-        <Footer />
+    <WorkoutProvider>
+      <div className="App">
+        <h1 style={{ color: 'white' }}>Todo App for Daily Workout</h1>
+        <WorkoutForm />
+        <WorkoutList />
+        <EditWorkoutForm/>
       </div>
-    </>
-  )
+    </WorkoutProvider>
+  );
 }
 
-export default App
+export default App;
